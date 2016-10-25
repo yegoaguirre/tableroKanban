@@ -66,32 +66,40 @@ $(document).ready(function() {
 
 
     //Para los efectos de drag and drop
-    $('li').on('mousedown', function() {
+    $(document).on('mousedown','li', function() {
 		$(this).css(
 			{
 				'backgroundColor' : 'black',
 				'color' : 'white'
 			}
 		);
-	}).on('mouseup', function() {
-		$('li').css(
-			{
-				'backgroundColor' : '',
-				'color' : ''
-			}
-		)
-	});
-
-    function testAjax() {
-        return $.ajax({
-        url: "getvalue.php"
-    });
-    }
+  	}).on('mouseup','li', function() {
+  		$('li').css(
+  			{
+  				'backgroundColor' : '',
+  				'color' : ''
+  			}
+  		)
+  	});
 
     //Al  hacer doble click sobre las tareas se despliega su detalle
-    $('.tarea').on('dblclick',function(){
-        $.get("ajax/detalle-tarea.ajax.php",function(data){
-            alert(data);
-        });
+    $(document).on('dblclick','.tarea',function(){
+      $.get( "ajax/detalle-tarea.ajax.php", { 'id': this.id }, function(data) {
+        
+      });
     })
+
+    //Agregar una tarea
+    $('#btn-guardar-tarea').on('click', function(){
+      $.get("ajax/inserta-detalle-tarea.ajax.php",
+          {'titulo': $('#titulo-tarea').val(),
+          'descripcion': $('#descripcion-tarea').val()
+          }, function(data){
+        $('#backlog').append('<li class="tarea" id="'+ data + '">' + $('#titulo-tarea').val()+'</li>');
+      });
+
+
+
+    })
+
 });

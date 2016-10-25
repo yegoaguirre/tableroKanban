@@ -11,7 +11,7 @@ $display = new Display($db);
         <meta charset="UTF-8">
         <title>Seguimiento de caso</title>
         <link href="css/style.css" rel="stylesheet">
-        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="scripts/tableroDragDrop.js"></script>
@@ -26,6 +26,7 @@ $display = new Display($db);
                 <ul id="backlog">
                     <?php echo $display->backlog(); ?>
                 </ul>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-agregartarea-modal-sm">Agregar tarea</button>
             </div>
             <div id="center">
                 <h2>Pendientes</h2>
@@ -48,4 +49,29 @@ $display = new Display($db);
         </div>
 
     </body>
+
+    <div class="modal fade bs-agregartarea-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Agregar tarea</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="titulo-tarea">Titulo:</label>
+              <input type="text" class="form-control" id="titulo-tarea">
+            </div>
+            <div class="form-group">
+              <label for="titulo-tarea">Descripcion:</label>
+              <input type="textarea" class="form-control" id="descripcion-tarea"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn-guardar-tarea">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </html>
