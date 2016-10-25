@@ -10,10 +10,12 @@ $display = new Display($db);
     <head>
         <meta charset="UTF-8">
         <title>Seguimiento de caso</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link href="css/style.css" rel="stylesheet">
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="scripts/tableroDragDrop.js"></script>
+        <script src="scripts/bootstrap.min.js"></script>
     </head>
 
     <body>
