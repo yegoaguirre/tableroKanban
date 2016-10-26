@@ -74,4 +74,15 @@ $display = new Display($db);
       </div>
     </div>
 
+
+    <div class="modal fade bs-detalletarea-modal-sm" id="modal-prueba" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Detalle tarea</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </html>

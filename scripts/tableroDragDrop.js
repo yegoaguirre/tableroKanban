@@ -84,8 +84,9 @@ $(document).ready(function() {
 
     //Al  hacer doble click sobre las tareas se despliega su detalle
     $(document).on('dblclick','.tarea',function(){
+      //$('#modal-prueba').modal('show');
       $.get( "ajax/detalle-tarea.ajax.php", { 'id': this.id }, function(data) {
-        
+        alert(data);
       });
     })
 
